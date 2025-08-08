@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Great+Vibes&display=swap');
+
+/* *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+
+:root{
+    --primary : #ff6b6b;
+    --secondary : #f8a5c2;
+    --accent : #b8e994;
+}
+
+body{
+    font-family: 'Poppins',sans-serif;
+    background: linear-gradient(135deg,#f5f7fa 0%, #ffeef8 100%);
+    min-height: 100vh;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.great-vibes{
+    font-family: 'Great Vibes',cursive;
+}
+
+.rakhi{
+    width: 120px;
+    height: 120px;
+    background-image: radial-gradient(circle,#800080 0%,#fad0c4 100%);
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(255, 107, 107, 0.3);
+    animation: float 6s ease-in-out infinite;
+}
+
+.rakhi::before{
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    border: 2px dashed #fff;
+    border-radius: 50%;
+    opacity: 0.7;
+}
+
+.rakhi::after{
+    content: 'रक्षाबंधन';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+@keyframes float{
+
+    0%,100%{
+        transform: translateY(0);
+    }
+
+    50%{
+        transform: translateY(-20px);
+    }
+
+}
+
+.heart{
+    animation: heartbeat 1.5s ease infinite;
+}
+
+@keyframes heartbeat{
+
+    0%{
+        transform: scale(1);
+    }
+
+    25%{
+        transform: scale(1.1);
+    }
+
+    50%{
+        transform: scale(1);
+    }
+
+    75%{
+        transform: scale(1.1);
+    }
+
+    100%{
+        transform: scale(1);
+    }
+
+}
+
+.flower-petal {
+    position: absolute;
+    background: linear-gradient(45deg, var(--secondary), var(--accent));
+    border-radius: 50% 0 50% 50%;
+    opacity: 0.8;
+    animation: falling linear infinite;
+}
+        
+@keyframes falling {
+
+    to {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.ribbon {
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    position: fixed;
+    right: -50px;
+    top: -50px;
+    z-index: 20;
+}
+        
+.ribbon::before,
+.ribbon::after {
+    position: absolute;
+    content: '';
+    width: 200px;
+    height: 40px;
+    background-color: var(--primary);
+}
+
+.ribbon::before {
+    transform: rotate(45deg);
+    top: 50px;
+    right: -20px;
+}
+        
+.ribbon::after {
+    transform: rotate(-45deg);
+    top: 50px;
+    right: -20px;
+}
+
+.text-shimmer {
+    background: linear-gradient(90deg, #ff9a9e, #fad0c4, #fad0c4, #ff9a9e);
+    background-size: 300% 300%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: shimmer 5s ease infinite;
+}
+
+@keyframes shimmer {
+    
+    0% { 
+        background-position: 0% 50%; 
+    }
+
+    50% { 
+        background-position: 100% 50%; 
+    }
+
+    100% { 
+        background-position: 0% 50%; 
+    }
+}
+
+.candle {
+    width: 20px;
+    height: 60px;
+    background: linear-gradient(to bottom, #fd79a8, #e84393);
+    border-radius: 5px;
+    position: relative;
+    margin: 0 auto;
+    box-shadow: 0 0 20px #e84393;
+}
+
+.candle::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 12px;
+    height: 12px;
+    background: #ffeb3b;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #ffeb3b, 0 0 20px #ffeb3b, 0 0 30px #ffeb3b;
+    animation: flicker 2s ease infinite;
+}
+
+@keyframes flicker {
+    
+    0%, 100% { 
+        transform: translateX(-50%) scale(1); opacity: 1; 
+    }
+    
+    25% { 
+        transform: translateX(-50%) scale(0.9); opacity: 0.8; 
+    }
+    
+    50% { 
+        transform: translateX(-50%) scale(1.1); opacity: 1; 
+    }
+    
+    75% { 
+        transform: translateX(-50%) scale(0.95); opacity: 0.9; 
+    }
+
+}
+
+.firework {
+    position: fixed;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px 5px var(--firework-color);
+    animation: fireworkAnimation 1.5s ease-out forwards;
+    opacity: 0;
+}
+
+@keyframes fireworkAnimation {
+    0% {
+        transform: translate(0, 0);
+        opacity: 1;
+        width: 5px;
+        height: 5px;
+    }
+    100% {
+        transform: translate(var(--firework-translate), var(--firework-translate-2));
+        opacity: 0;
+        width: 2px;
+        height: 2px;
+    }
+}
+
+.photo-frame {
+    border: 10px solid white;
+    border-radius: 5px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transform: rotate(2deg);
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.photo-frame:hover {
+    transform: rotate(0deg) scale(1.05);
+}
